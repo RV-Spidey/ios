@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript" src="app.js" defer></script>
+</head>
+<body>
+  <nav id="sidebar">
+    <ul>
+      <li>
+        <span class="logo" id="userElement"></span>
+        <button onclick=toggleSidebar() id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+        </button>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/></svg>
+          <span>Module 1</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+            <div>
+                <li><a href="#" onclick="showVideo('video1-1')">Class 1</a></li>
+                <li><a href="#" onclick="showVideo('video2-1')">Class 2</a></li>
+                <li><a href="#" onclick="showVideo('video3-1')">Class 3</a></li>
+                <li><a href="#" onclick="showVideo('video4-1')">Class 4</a></li>
+                <li><a href="#" onclick="showVideo('video5-1')">Class 5</a></li>
+                <li><a href="#" onclick="showVideo('video6-1')">Class 6</a></li>
+                <li><a href="#" onclick="showVideo('video7-1')">Class 7</a></li>
+                <li><a href="#" onclick="showVideo('video8-1')">Class 8</a></li>
+                <li><a href="#" onclick="showVideo('video9-1')">Class 9</a></li>
+                <li><a href="#" onclick="showVideo('video10-1')">Class 10</a></li>
+                <li><a href="#" onclick="showVideo('video11-1')">Class 11</a></li>
+                <li><a href="#" onclick="showVideo('video12-1')">Class 12</a></li>
+                <li><a href="#" onclick="showVideo('video13-1')">Class 13</a></li>
+                <li><a href="#" onclick="showVideo('video14-1')">Class 14</a></li>
+                <li><a href="#" onclick="showVideo('video15-1')">Class 15</a></li>
+                <li><a href="#" onclick="showVideo('video16-1')">Class 16</a></li>
+                <li><a href="#" onclick="showVideo('video17-1')">Class 17</a></li>
+                <li><a href="#" onclick="showVideo('video18-1')">Class 18</a></li>
+                <li><a href="#" onclick="showVideo('video19-1')">Class 19</a></li>
+                <li><a href="#" onclick="showVideo('video20-1')">Class 20</a></li>
+                <li><a href="#" onclick="showVideo('video21-1')">Class 21</a></li>
+                <li><a href="#" onclick="showVideo('video22-1')">Class 22</a></li>
+                <li><a href="#" onclick="showVideo('video23-1')">Class 23</a></li>
+            </div>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/></svg>
+          <span>Module 2</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+            <div>
+                <li><a href="#" onclick="showVideo('video1-2')">Class 1</a></li>
+                <li><a href="#" onclick="showVideo('video2-2')">Class 2</a></li>
+                <li><a href="#" onclick="showVideo('video3-2')">Class 3</a></li>
+                <li><a href="#" onclick="showVideo('video4-2')">Class 4</a></li>
+                <li><a href="#" onclick="showVideo('video5-2')">Class 5</a></li>
+                <li><a href="#" onclick="showVideo('video6-2')">Class 6</a></li>
+                <li><a href="#" onclick="showVideo('video7-2')">Class 7</a></li>
+                <li><a href="#" onclick="showVideo('video8-2')">Class 8</a></li>
+                <li><a href="#" onclick="showVideo('video9-2')">Class 9</a></li>
+                <li><a href="#" onclick="showVideo('video10-2')">Class 10</a></li>
+                <li><a href="#" onclick="showVideo('video11-2')">Class 11</a></li>
+                <li><a href="#" onclick="showVideo('video12-2')">Class 12</a></li>
+                <li><a href="#" onclick="showVideo('video13-2')">Class 13</a></li>
+            </div>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/></svg>
+          <span>Module 3</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+            <div>
+                <li><a href="#" onclick="showVideo('video1-3')">Class 1</a></li>
+                <li><a href="#" onclick="showVideo('video2-3')">Class 2</a></li>
+                <li><a href="#" onclick="showVideo('video3-3')">Class 3</a></li>
+                <li><a href="#" onclick="showVideo('video4-3')">Class 4</a></li>
+                <li><a href="#" onclick="showVideo('video5-3')">Class 5</a></li>
+                <li><a href="#" onclick="showVideo('video6-3')">Class 6</a></li>
+                <li><a href="#" onclick="showVideo('video7-3')">Class 7</a></li>
+                <li><a href="#" onclick="showVideo('video8-3')">Class 8</a></li>
+                <li><a href="#" onclick="showVideo('video9-3')">Class 9</a></li>
+                <li><a href="#" onclick="showVideo('video10-3')">Class 10</a></li>
+                <li><a href="#" onclick="showVideo('video11-3')">Class 11</a></li>
+                <li><a href="#" onclick="showVideo('video12-3')">Class 12</a></li>
+                <li><a href="#" onclick="showVideo('video13-3')">Class 13</a></li>
+                <li><a href="#" onclick="showVideo('video14-3')">Class 14</a></li>
+                <li><a href="#" onclick="showVideo('video15-3')">Class 15</a></li>
+                <li><a href="#" onclick="showVideo('video16-3')">Class 16</a></li>
+                <li><a href="#" onclick="showVideo('video17-3')">Class 17</a></li>
+                <li><a href="#" onclick="showVideo('video18-3')">Class 18</a></li>
+                <li><a href="#" onclick="showVideo('video19-3')">Class 19</a></li>
+                <li><a href="#" onclick="showVideo('video20-3')">Class 20</a></li>
+                <li><a href="#" onclick="showVideo('video21-3')">Class 21</a></li>
+                <li><a href="#" onclick="showVideo('video22-3')">Class 22</a></li>
+            </div>
+        </ul>
+        <li>
+            <button onclick=toggleSubMenu(this) class="dropdown-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/></svg>
+              <span>Module 4</span>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+            </button>
+            <ul class="sub-menu">
+              <div>
+                <li><a href="#" onclick="showVideo('video1-4')">Class 1</a></li>
+                <li><a href="#" onclick="showVideo('video2-4')">Class 2</a></li>
+                <li><a href="#" onclick="showVideo('video3-4')">Class 3</a></li>
+                <li><a href="#" onclick="showVideo('video4-4')">Class 4</a></li>
+                <li><a href="#" onclick="showVideo('video5-4')">Class 5</a></li>
+                <li><a href="#" onclick="showVideo('video6-4')">Class 6</a></li>
+                <li><a href="#" onclick="showVideo('video7-4')">Class 7</a></li>
+                <li><a href="#" onclick="showVideo('video8-4')">Class 8</a></li>
+                <li><a href="#" onclick="showVideo('video9-4')">Class 9</a></li>
+                <li><a href="#" onclick="showVideo('video10-4')">Class 10</a></li>
+                <li><a href="#" onclick="showVideo('video11-4')">Class 11</a></li>
+                <li><a href="#" onclick="showVideo('video12-4')">Class 12</a></li>
+                <li><a href="#" onclick="showVideo('video13-4')">Class 13</a></li>
+                <li><a href="#" onclick="showVideo('video14-4')">Class 14</a></li>
+                <li><a href="#" onclick="showVideo('video15-4')">Class 15</a></li>
+                <li><a href="#" onclick="showVideo('video16-4')">Class 16</a></li>
+                <li><a href="#" onclick="showVideo('video17-4')">Class 17</a></li>
+                <li><a href="#" onclick="showVideo('video18-4')">Class 18</a></li>
+              </div>
+            </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/></svg>
+          <span>Module 5</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+                <li><a href="#" onclick="showVideo('video1-5')">Class 1</a></li>
+                <li><a href="#" onclick="showVideo('video2-5')">Class 2</a></li>
+                <li><a href="#" onclick="showVideo('video3-5')">Class 3</a></li>
+                <li><a href="#" onclick="showVideo('video4-5')">Class 4</a></li>
+                <li><a href="#" onclick="showVideo('video5-5')">Class 5</a></li>
+                <li><a href="#" onclick="showVideo('video6-5')">Class 6</a></li>
+                <li><a href="#" onclick="showVideo('video7-5')">Class 7</a></li>
+                <li><a href="#" onclick="showVideo('video8-5')">Class 8</a></li>
+                <li><a href="#" onclick="showVideo('video9-5')">Class 9</a></li>
+                <li><a href="#" onclick="showVideo('video10-5')">Class 10</a></li>
+                <li><a href="#" onclick="showVideo('video11-5')">Class 11</a></li>
+                <li><a href="#" onclick="showVideo('video12-5')">Class 12</a></li>
+                <li><a href="#" onclick="showVideo('video13-5')">Class 13</a></li>
+                <li><a href="#" onclick="showVideo('video14-5')">Class 14</a></li>
+                <li><a href="#" onclick="showVideo('video15-5')">Class 15</a></li>
+                <li><a href="#" onclick="showVideo('video16-5')">Class 16</a></li>
+                <li><a href="#" onclick="showVideo('video17-5')">Class 17</a></li>
+                <li><a href="#" onclick="showVideo('video18-5')">Class 18</a></li>
+                <li><a href="#" onclick="showVideo('video19-5')">Class 19</a></li>
+                <li><a href="#" onclick="showVideo('video20-5')">Class 20</a></li>
+          </div>
+        </ul>
+      </li>
+  </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="logo1" id="userElement1"></div>
+    <div id="video-container">
+          <div id="video1-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 1 -->
+            <iframe data-src="https://www.youtube.com/embed/NJOQveab2nI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video2-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 2 -->
+            <iframe data-src="https://www.youtube.com/embed/UDVEkcZL5nc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video3-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 3 -->
+            <iframe data-src="https://www.youtube.com/embed/Sgyg2TAzR8U?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video4-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 4 -->
+            <iframe data-src="https://www.youtube.com/embed/akAud22G-XM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video5-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 5 -->
+            <iframe data-src="https://www.youtube.com/embed/vioyUkc-lvw?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video6-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 6 -->
+            <iframe data-src="https://www.youtube.com/embed/tHMiH6IlzRk?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video7-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 7 -->
+            <iframe data-src="https://www.youtube.com/embed/LIk1M_LPNUQ?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video8-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 8 -->
+            <iframe data-src="https://www.youtube.com/embed/UsobU0ogHVA?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video9-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 9 -->
+            <iframe data-src="https://www.youtube.com/embed/xsWF5M7KDCA?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video10-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 10 -->
+            <iframe data-src="https://www.youtube.com/embed/BtiYog4rUME?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video11-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 11 -->
+            <iframe data-src="https://www.youtube.com/embed/tMYS8PNz67g?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video12-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 12 -->
+            <iframe data-src="https://www.youtube.com/embed/xq5n3MJuMLY?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video13-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 13 -->
+            <iframe data-src="https://www.youtube.com/embed/Sd15VqUes2s?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video14-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 14 -->
+            <iframe data-src="https://www.youtube.com/embed/L160LmTGboM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video15-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 15 -->
+            <iframe data-src="https://www.youtube.com/embed/ugpkjN5gKp0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video16-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 16 -->
+            <iframe data-src="https://www.youtube.com/embed/MDqmq9PyYSE?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video17-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 17 -->
+            <iframe data-src="https://www.youtube.com/embed/H7r5ZSxlrv0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video18-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 18 -->
+            <iframe data-src="https://www.youtube.com/embed/zzzciXiFHHg?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video19-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 19-->
+            <iframe data-src="https://www.youtube.com/embed/qWnTQiRt798?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video20-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 20 -->
+            <iframe data-src="https://www.youtube.com/embed/7kzUaVn833s?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video21-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 21 -->
+            <iframe data-src="https://www.youtube.com/embed/Bc5AowxrtWA?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video22-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 22-->
+            <iframe data-src="https://www.youtube.com/embed/DwtSZDcwE8U?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video23-1" class="video" style="display:none;">
+            <!-- Embed the video for Class 23 -->
+            <iframe data-src="https://www.youtube.com/embed/-p8PsrdJsCM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+      <!------------------------------------------------------------------------------------------------------------>
+          <div id="video1-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 1 -->
+            <iframe data-src="https://www.youtube.com/embed/w6k2ox4rs40?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video2-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 2 -->
+            <iframe data-src="https://www.youtube.com/embed/yU-8qrOf4kA?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video3-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 3 -->
+            <iframe data-src="https://www.youtube.com/embed/4tZaGKZqCDg?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video4-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 4 -->
+            <iframe data-src="https://www.youtube.com/embed/vdLC7-VVUIc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video5-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 5 -->
+            <iframe data-src="https://www.youtube.com/embed/yDY44BXY8d0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video6-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 6 -->
+            <iframe data-src="https://www.youtube.com/embed/38igUiOPqNA?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video7-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 7 -->
+            <iframe data-src="https://www.youtube.com/embed/IhHkpv1CMUc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video8-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 8 -->
+            <iframe data-src="https://www.youtube.com/embed/brjYS-BIerU?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video9-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 9 -->
+            <iframe data-src="https://www.youtube.com/embed/n0lnby5ZAr4?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video10-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 10 -->
+            <iframe data-src="https://www.youtube.com/embed/G4s7hkLmhPc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video11-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 11 -->
+            <iframe data-src="https://www.youtube.com/embed/DcAFOt0y-yk?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video12-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 12 -->
+            <iframe data-src="https://www.youtube.com/embed/9DFcVHtPoMY?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video13-2" class="video" style="display:none;">
+            <!-- Embed the video for Class 13 -->
+            <iframe data-src="https://www.youtube.com/embed/ZV27tpID--M?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <!------------------------------------------------------------------------------------------------------->
+          <div id="video1-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 1 -->
+            <iframe data-src="https://www.youtube.com/embed/jEiUbuCpaYs?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video2-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 2 -->
+            <iframe data-src="https://www.youtube.com/embed/3TGW4plndpc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video3-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 3 -->
+            <iframe data-src="https://www.youtube.com/embed/13fZvGxQoWc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video4-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 4 -->
+            <iframe data-src="https://www.youtube.com/embed/FoViInoCRQc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video5-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 5 -->
+            <iframe data-src="https://www.youtube.com/embed/nKUB3V-pvHw?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video6-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 6 -->
+            <iframe data-src="https://www.youtube.com/embed/9Ro85nT6K5g?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video7-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 7 -->
+            <iframe data-src="https://www.youtube.com/embed/H6NUvVkPQLo?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video8-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 8 -->
+            <iframe data-src="https://www.youtube.com/embed/VYam4q7cIG0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video9-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 9 -->
+            <iframe data-src="https://www.youtube.com/embed/Cg6E1V_ugs0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video10-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 10 -->
+            <iframe data-src="https://www.youtube.com/embed/bDdXEc-YVHI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video11-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 11 -->
+            <iframe data-src="https://www.youtube.com/embed/6F9n_fwbwOU?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video12-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 12 -->
+            <iframe data-src="https://www.youtube.com/embed/qH9b_-WkIBU?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video13-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 13 -->
+            <iframe data-src="https://www.youtube.com/embed/iK1rdCIoQeY?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video14-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 14 -->
+            <iframe data-src="https://www.youtube.com/embed/T3KajiXGuyM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video15-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 15 -->
+            <iframe data-src="https://www.youtube.com/embed/qIUIyHOOE38?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video16-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 16 -->
+            <iframe data-src="https://www.youtube.com/embed/OWsK3cQJyBc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video17-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 17 -->
+            <iframe data-src="https://www.youtube.com/embed/2zpNzKTr-hs?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video18-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 18 -->
+            <iframe data-src="https://www.youtube.com/embed/LvX-34PbRr8?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video19-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 19-->
+            <iframe data-src="https://www.youtube.com/embed/-j757xUmDw8?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video20-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 20 -->
+            <iframe data-src="https://www.youtube.com/embed/jr3PDp2bHuI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video21-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 21 -->
+            <iframe data-src="https://www.youtube.com/embed/N5UBocTFbwI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video22-3" class="video" style="display:none;">
+            <!-- Embed the video for Class 22-->
+            <iframe data-src="https://www.youtube.com/embed/mfM4YcP0PtE?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <!---------------------------------------------------------------------------------->
+          <div id="video1-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 1 -->
+            <iframe data-src="https://www.youtube.com/embed/Rz6-p5Oom9c?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video2-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 2 -->
+            <iframe data-src="https://www.youtube.com/embed/ZkGJ2dhJb50?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video3-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 3 -->
+            <iframe data-src="https://www.youtube.com/embed/ejtSC31Bp4Y?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video4-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 4 -->
+            <iframe data-src="https://www.youtube.com/embed/inc_x3q5yOA?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video5-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 5 -->
+            <iframe data-src="https://www.youtube.com/embed/zowSiBLYa7w?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video6-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 6 -->
+            <iframe data-src="https://www.youtube.com/embed/rZc_JXKcNSM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video7-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 7 -->
+            <iframe data-src="https://www.youtube.com/embed/_W10LshJNww?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video8-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 8 -->
+            <iframe data-src="https://www.youtube.com/embed/C8l7V6t7cP0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video9-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 9 -->
+            <iframe data-src="https://www.youtube.com/embed/cD91iE3rElM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video10-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 10 -->
+            <iframe data-src="https://www.youtube.com/embed/S9SKMOYhSNs?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video11-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 11 -->
+            <iframe data-src="https://www.youtube.com/embed/UZcb0qJfs_I?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video12-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 12 -->
+            <iframe data-src="https://www.youtube.com/embed/SYTU_cAN5rU?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video13-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 13 -->
+            <iframe data-src="https://www.youtube.com/embed/0wLoH948ucc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video14-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 14 -->
+            <iframe data-src="https://www.youtube.com/embed/QRug4vcrcEo?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video15-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 15 -->
+            <iframe data-src="https://www.youtube.com/embed/FWtX4idw48Q?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+      
+          <div id="video16-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 16 -->
+            <iframe data-src="https://www.youtube.com/embed/AKH8B02CMnI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video17-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 17 -->
+            <iframe data-src="https://www.youtube.com/embed/wzeI7H9H760?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video18-4" class="video" style="display:none;">
+            <!-- Embed the video for Class 18 -->
+            <iframe data-src="https://www.youtube.com/embed/_LeBCrIpqt4?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <!---------------------------------------------------------------------------------->
+        <div id="video1-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 1 -->
+            <iframe data-src="https://www.youtube.com/embed/3j6FnCR99Kc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video2-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 2 -->
+            <iframe data-src="https://www.youtube.com/embed/7k6ghma44Ck?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video3-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 3 -->
+            <iframe data-src="https://www.youtube.com/embed/T13IaHt8dq0?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div id="video4-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 4 -->
+            <iframe data-src="https://www.youtube.com/embed/5DMGtI9J4HI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video5-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 5 -->
+            <iframe data-src="https://www.youtube.com/embed/I2IA6hyoZhs?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video6-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 6 -->
+            <iframe data-src="https://www.youtube.com/embed/Oq2TzoeX2Ro?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video7-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 7 -->
+            <iframe data-src="https://www.youtube.com/embed/f6bCgkeyFms?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video8-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 8 -->
+            <iframe data-src="https://www.youtube.com/embed/YOv4w70mQVc?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video9-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 9 -->
+            <iframe data-src="https://www.youtube.com/embed/_RHhaoueXZk?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video10-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 10 -->
+            <iframe data-src="https://www.youtube.com/embed/o6sd_qtWhnU?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video11-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 11 -->
+            <iframe data-src="https://www.youtube.com/embed/gbDO9CwJmKU?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video12-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 12 -->
+            <iframe data-src="https://www.youtube.com/embed/hANZI2mJnsQ?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video13-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 13 -->
+            <iframe data-src="https://www.youtube.com/embed/3NyGGQ2z4o8?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video14-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 14 -->
+            <iframe data-src="https://www.youtube.com/embed/WrfO89n8gkI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video15-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 15 -->
+            <iframe data-src="https://www.youtube.com/embed/gfKWcTFxtnE?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video16-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 16 -->
+            <iframe data-src="https://www.youtube.com/embed/WrfO89n8gkI?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video17-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 17 -->
+            <iframe data-src="https://www.youtube.com/embed/P5aMhrRTOtQ?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video18-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 18 -->
+            <iframe data-src="https://www.youtube.com/embed/oPqY3ZhX4IM?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video19-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 19-->
+            <iframe data-src="https://www.youtube.com/embed/aWS_XujOD84?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <div id="video20-5" class="video" style="display:none;">
+            <!-- Embed the video for Class 20 -->
+            <iframe data-src="https://www.youtube.com/embed/Ugtxb-OEA-8?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+      <!-- Other main content -->
+  </main>
+</body>
+</html>
