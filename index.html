@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone-Only Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the iPhone-Only Website</h1>
+
+  <script>
+    // JavaScript to detect iPhone user-agent
+    const isIphone = /iPhone/i.test(navigator.userAgent);
+
+    if (!isIphone) {
+      alert('This website is only accessible on iPhones.');
+      window.location.href = 'https://your-other-url.com'; // Redirect to another page
+    }
+  </script>
+</body>
+</html>
