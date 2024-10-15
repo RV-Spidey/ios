@@ -1,10 +1,12 @@
-// JavaScript to detect iPhone user-agent
-    const isIphone = /iPhone/i.test(navigator.userAgent);
-
+const isIphone = /iPhone/i.test(navigator.userAgent);
+    
     if (!isIphone) {
       alert('This website is only accessible on iPhones.');
       window.location.href = 'https://your-other-url.com'; // Redirect to another page
+    } else {
+      console.log('Welcome, iPhone user!');
     }
+
 
 let ip; // Variable to store the IP address
 
